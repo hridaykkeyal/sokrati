@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>Sokrati 03</title>
+</head>
+
+<body>
+	<form action="/mail" method="post" style="font-family:arial;">
+
+		<div id="header">
+			<b>Login to your account</b>
+		</div>
+		
+		<div id="line">
+		</div>
+		
+		<div id="user">
+			<label><b>User name</b></label>
+			<input name="email" id="input" type="email" placeholder="admin" required>
+		</div>
+		
+		<div id="pass">	
+			<label><b>Password</b></label>
+			<input name="password" id="input" type="password" placeholder="******" required pattern="[a-zA-Z0-9]{0,8}$">
+		</div>
+		
+		<div id="but">
+			<button type="submit" style="color:white;">Sign in</button>
+			<span id="forgot"><a href="https://sokrati.com/" target="_blank">Forgot Password ?</a></span>
+		</div>
+		
+		<div id="foot">
+			Powered by Sokrati
+		</div>
+	</form>
+</body>
+
+<style>
+form {
+  width: 100%;
+}
+
+#header {
+	padding: 30 0 20 0;
+	font-size: 1.8em;
+	text-align: center;
+	margin: 0 0 0 -200px;
+}
+
+button {
+	background-color: DodgerBlue;
+	width: 120px;
+	height: 40px;
+	font-size: 1em;
+	border-radius: 6px;
+	border-color: DodgerBlue;
+}
+
+#line {
+	width: 100%;
+	height: 2px;
+	background: lightgrey;
+}
+
+#but {
+	padding: 30 0 0 116;
+	text-align: center;
+}
+
+#forgot {
+	padding: 0 0 0 24;
+}
+
+#user {
+	text-align: center;
+	padding: 20 0 0 0;
+}
+
+#pass {
+	text-align: center;
+	padding: 30 0 0 6;
+}
+
+#input {
+  width: 274px;
+  height: 40px;
+  margin: 0 0 0 26;
+  border-radius: 6px;
+  border-color: lightgrey;
+}
+
+#foot {
+	padding: 60 0 0 0;
+	margin: 0 0 0 450px;
+	text-align: center;
+}
+</style>
+
+</html>

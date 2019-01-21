@@ -1,0 +1,128 @@
+<html>
+
+<head>
+    <title>Sokrati 04</title>
+</head>
+
+<body style="font-family:arial;">
+    <table class="scroll" id="table" width="300px">
+        <tbody>
+			<tr>
+				<td>Salutation</td>
+			</tr>
+			<tr>
+				<td>First Name</td>
+			</tr>
+			<tr>
+				<td>Middle Name</td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+			</tr>
+			<tr>
+				<td>Primary Phone</td>
+			</tr>
+			<tr>
+				<td>Mobile Phone</td>
+			</tr>
+			<tr>
+				<td>Company</td>
+			</tr>
+			<tr>
+				<td>Fax</td>
+			</tr>
+			<tr>
+				<td>Designation</td>
+			</tr>
+			<tr>
+				<td>Primary Email</td>
+			</tr>
+			<tr>
+				<td>Lead Number</td>
+			</tr>
+		</tbody>
+    </table>
+	
+	<div>
+		<br><br><br><input type="button" id="tst" value=">>" onclick="fnselect()" />
+		<br><br><input type="button" id="tst" value="<<" onclick="fnselect2()" />
+	</div>
+	
+    <table class="scroll" id="table2" width="300px">
+        <tbody>
+		</tbody>
+    </table>
+</body>
+
+<style>
+	.selected {
+		background-color: lightblue;
+	}
+		
+	table {
+		float: left;
+	}
+
+	div {
+		float: left;
+		padding: 0 20 0 20;
+	}
+	
+	
+	table.scroll {
+		border: 1px solid black;
+	}
+
+	table.scroll tbody, table.scroll thead { 
+		display: block;
+	}
+
+	table.scroll tbody {
+		height: 180px;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+	
+	::-webkit-scrollbar {
+		width: 16px;
+	}
+
+	::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 5px grey; 
+		border-radius: 10px;
+	}
+ 
+	::-webkit-scrollbar-thumb {
+		background: lightgrey; 
+		border-radius: 10px;
+	}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+	function highlight(e) {
+		if (selected[0]) selected[0].className = '';
+		e.target.parentNode.className = 'selected';
+	}           
+	var table = document.getElementById('table'),
+		selected = table.getElementsByClassName('selected');
+	table.onclick = highlight;
+	var table2 = document.getElementById('table2'),
+		selected2 = table2.getElementsByClassName('selected');
+	table2.onclick = highlight;
+	function fnselect(){
+		var selected_data = $("tr.selected td:first" ).html();
+		$("tr.selected td:first" ).remove();
+		if(selected_data != undefined)
+			$('#table2 tbody').append('<tr><td>'+selected_data+'</td></tr>');
+	}
+	function fnselect2(){
+		var selected_data = $("tr.selected td:first" ).html();
+		$("tr.selected td:first" ).remove();
+		if(selected_data != undefined)
+		$('#table tbody').append('<tr><td>'+selected_data+'</td></tr>');
+	}
+</script>
+
+</html>
